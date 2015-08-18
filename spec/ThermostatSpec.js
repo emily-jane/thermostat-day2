@@ -49,24 +49,45 @@ describe('Thermostat', function() {
       expect(temperature).toBe(30);
     });
 
-    describe('powerSavingMode', function() {
-      it('defaults to true', function() {
-        expect(powerSavingMode).toBe(true)
-      });
+    it('returns to 20 when thermostat is reset', function() {
+      temperature = 25;
+      thermostat.reset();
+      expect(temperature).toBe(20);
+    });
+  });
 
-      it('can be turned off', function() {
-        thermostat.powerSaverOff();
-        expect(powerSavingMode).toBe(false);
-      });
-
-      it('can be turned on', function() {
-        powerSavingMode = false;
-        thermostat.powerSaverOn();
-        expect(powerSavingMode).toBe(true);
-      });
+  describe('powerSavingMode', function() {
+    it('defaults to true', function() {
+      expect(powerSavingMode).toBe(true)
     });
 
+    it('can be turned off', function() {
+      thermostat.powerSaverOff();
+      expect(powerSavingMode).toBe(false);
+    });
+
+    it('can be turned on', function() {
+      powerSavingMode = false;
+      thermostat.powerSaverOn();
+      expect(powerSavingMode).toBe(true);
+    });
+  });
+
+  describe('colour', function() {
+    it('is green when temperature is under 18', function() {
+      temperature = 17;
+      expect(thermostat.colour(temperature)).toBe("green");
+    });
+
+    it('is yellow when temperature is under 25', function() {
+      temperature = 24;
+      expect(thermostat.colour(temperature)).toBe("yellow");
+    });
+
+    it('is red when temperature is over 25', function() {
+      temperature = 25;
+      expect(thermostat.colour(temperature)).toBe("red");
+    });
   });
 
 });
-
