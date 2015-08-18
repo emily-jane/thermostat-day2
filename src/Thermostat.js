@@ -10,15 +10,18 @@ var Thermostat = function() {
   Thermostat.prototype.up = function() {
     if(this.powerSavingMode === true && this.temperature < 25) {
       this.temperature = this.temperature + this.increment;
+      this.colour;
     };
     if(this.powerSavingMode === false && this.temperature < 32) {
       this.temperature = this.temperature + this.increment;
+      this.colour;
     };
   };
 
   Thermostat.prototype.down = function() {
     if(this.temperature > 10) {
       this.temperature = this.temperature - this.increment;
+      this.colour;
     };
   };
 
