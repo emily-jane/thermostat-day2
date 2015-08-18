@@ -1,48 +1,54 @@
-var Thermostat = function() {};
+var Thermostat = function() {
 
-var temperature = 20;
-var increment = 1;
-var powerSavingMode = true;
-var colour
+  this.temperature = 20;
+  this.increment = 1;
+  this.powerSavingMode = true;
+  this.colour;
 
-Thermostat.prototype.up = function() {
-  if(powerSavingMode === true && temperature < 25) {
-    temperature = temperature + increment;
+  Thermostat.prototype.up = function() {
+    if(this.powerSavingMode === true && this.temperature < 25) {
+      this.temperature = this.temperature + this.increment;
+    };
+    if(this.powerSavingMode === false && this.temperature < 32) {
+      this.temperature = this.temperature + this.increment;
+    };
   };
-  if(powerSavingMode === false && temperature < 32) {
-    temperature = temperature + increment;
-  };
-};
 
-Thermostat.prototype.down = function() {
-  if(temperature > 10) {
-    temperature = temperature - increment;
+  Thermostat.prototype.down = function() {
+    if(this.temperature > 10) {
+      this.temperature = this.temperature - this.increment;
+    };
   };
-};
 
-Thermostat.prototype.powerSaverOff = function() {
-  powerSavingMode = false;
-};
-
-Thermostat.prototype.powerSaverOn = function() {
-  powerSavingMode = true;
-};
-
-Thermostat.prototype.reset = function () {
-  temperature = 20;
-};
-
-Thermostat.prototype.colour = function (temperature) {
-  if(temperature < 18) {
-    colour = "green"
-    return colour
+  Thermostat.prototype.powerSaverOff = function() {
+    this.powerSavingMode = false;
   };
-  if(temperature < 25) {
-    colour = "yellow"
-    return colour
+
+  Thermostat.prototype.powerSaverOn = function() {
+    this.powerSavingMode = true;
   };
-  if(temperature >= 25) {
-    colour = "red"
-    return colour
+
+  Thermostat.prototype.reset = function () {
+    this.temperature = 20;
   };
+
+  Thermostat.prototype.colour = function () {
+    if(this.temperature < 18) {
+      this.colour = "green"
+      return this.colour
+    };
+    if(this.temperature < 25) {
+      this.colour = "yellow"
+      return this.colour
+    };
+    if(this.temperature >= 25) {
+      this.colour = "red"
+      return this.colour
+    };
+  };
+
+  Thermostat.prototype.showTemperature = function() {
+    return this.temperature
+  };
+
 };
