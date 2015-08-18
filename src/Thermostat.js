@@ -10,18 +10,15 @@ var Thermostat = function() {
   Thermostat.prototype.up = function() {
     if(this.powerSavingMode === true && this.temperature < 25) {
       this.temperature = this.temperature + this.increment;
-      this.colour;
     };
     if(this.powerSavingMode === false && this.temperature < 32) {
       this.temperature = this.temperature + this.increment;
-      this.colour;
     };
   };
 
   Thermostat.prototype.down = function() {
     if(this.temperature > 10) {
       this.temperature = this.temperature - this.increment;
-      this.colour;
     };
   };
 
@@ -37,21 +34,14 @@ var Thermostat = function() {
     this.temperature = 20;
   };
 
-  Thermostat.prototype.colour = function () {
+  Thermostat.prototype.setColour = function () {
     if(this.temperature < 18) {
       this.colour = "green"
-      return this.colour
     };
-    if(this.temperature < 25) {
+    if(this.temperature < 25 && this.temperature >= 18) {
       this.colour = "yellow"
-      return this.colour
     };
     if(this.temperature >= 25) {
       this.colour = "red"
-      return this.colour
     };
-  };
-
-  Thermostat.prototype.showTemperature = function() {
-    return this.temperature
   };

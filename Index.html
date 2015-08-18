@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   <title>Thermostat</title>
 <!--   <link rel="shortcut icon" type="image/png"  href="lib/jasmine-2.3.4/jasmine_favicon.png">
   <link rel="stylesheet" href="lib/jasmine-2.3.4/jasmine.css"> -->
+<style>
+
+body { background: url('public/giphy.gif') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
+
+  .button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 48px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 140px;
+}
+
+  .button2 {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 48px;
+  font-family: "Bitter",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 295px;
+}
+
+button:focus {
+  outline: none
+}
+
+section.border button {
+ color: #FFFFFF ;
+ background: rgba(0,0,0,0);
+ border: solid 5px #FFFFFF ;
+}
+section.border button:hover,
+section.border button.hover {
+ border-color: #B0B0B0 ;
+ color: #B0B0B0 ;
+}
+section.border button:active,
+section.border button.active {
+ border-color: #888888 ;
+ color: #888888 ;
+}
+
+/*section.flat button {
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+}
+
+section.flat button:hover,
+section.flat button.hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+
+section.flat button:active,
+section.flat button.active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}*/
+
+h1 {
+font-family: 'Roboto', sans-serif;
+font-size: 120px;
+}
+</style>
 </head>
 
-<body>
+<body bgcolor="Grey">
+<center>
 <h1><span id="temperature"></span> &#8451</h1>
-<button type="button" id="up">&#8613</button>
-<button type="button" id="down">&#8615</button><br><br>
-<button type="button" id="reset">Reset</button><br>
-<input type="checkbox" id="powersavingmode" checked>Power Saving Mode<br>
+<section class="border">
+<button type="button" class="button" id="up">&#8710</button>
+<button type="button" class="button" id="down">&#8711</button><br><br>
+<button type="button" class="button2" id="reset">&#8635</button><br><br>
+</section>
+<input type="checkbox" id="powersavingmode" checked>Power<br>
+</center>
 </body>
 <script src="src/Thermostat.js"></script>
 <script src="src/app.js"></script>
