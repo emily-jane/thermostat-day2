@@ -5,6 +5,8 @@ var Thermostat = function() {
   this.powerSavingMode = true;
   this.colour;
 
+  };
+
   Thermostat.prototype.up = function() {
     if(this.powerSavingMode === true && this.temperature < 25) {
       this.temperature = this.temperature + this.increment;
@@ -50,5 +52,3 @@ var Thermostat = function() {
   Thermostat.prototype.showTemperature = function() {
     return this.temperature
   };
-
-};

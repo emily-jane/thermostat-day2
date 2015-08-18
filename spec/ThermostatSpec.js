@@ -3,56 +3,54 @@ describe('Thermostat', function() {
 
   beforeEach(function() {
     thermostat = new Thermostat();
-    // temperature = 20;
-    // powerSavingMode = true;
   });
 
   describe('temperature', function() {
     it('starts at 20 degrees', function() {
-      expect(thermostat.showTemperature()).toEqual(20);
+      expect(thermostat.temperature).toBe(20);
     });
 
     it('can be increased by pressing up', function() {
       thermostat.up();
-      expect(thermostat.showTemperature()).toBe(21);
+      expect(thermostat.temperature).toBe(21);
     });
 
     it('can be decreased by pressing down', function() {
       thermostat.down();
-      expect(thermostat.showTemperature()).toBe(19);
+      expect(thermostat.temperature).toBe(19);
     });
 
     it('cannot go below 10 degrees', function() {
       thermostat.temperature = 10;
       thermostat.down();
-      expect(thermostat.showTemperature()).toBe(10);
+      expect(thermostat.temperature).toBe(10);
     });
 
     it('cannot go above 25 degrees if power saving mode is on', function() {
       thermostat.powerSavingMode = true;
       thermostat.temperature = 25;
       thermostat.up();
-      expect(thermostat.showTemperature()).toBe(25);
+      expect(thermostat.temperature).toBe(25);
     });
 
     it('cannot go above 32 degrees if power saving mode is off', function() {
       thermostat.powerSavingMode = false;
       thermostat.temperature = 32;
       thermostat.up();
-      expect(thermostat.showTemperature()).toBe(32);
+      expect(thermostat.temperature).toBe(32);
     });
 
     it('can increase from 25 to 32 degrees if power saving mode is off', function() {
       thermostat.powerSavingMode = false;
       thermostat.temperature = 29;
       thermostat.up();
-      expect(thermostat.showTemperature()).toBe(30);
+      expect(thermostat.temperature).toBe(30);
     });
 
     it('returns to 20 when thermostat is reset', function() {
       thermostat.temperature = 25;
       thermostat.reset();
-      expect(thermostat.showTemperature()).toBe(20);
+      expect(thermostat.temperature).toBe(20);
     });
   });
 
