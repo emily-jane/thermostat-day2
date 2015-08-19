@@ -2,136 +2,10 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/thermostat.css">
 
   <title>Thermostat</title>
 
-<style>
-
-body { background: url('public/giphy.gif') no-repeat center center fixed; 
-      -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;}
-
-  .button {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
-  font-size: 48px;
-  font-family: "Bitter",serif;
-  line-height: 1.8;
-  appearance: none;
-  box-shadow: none;
-  border-radius: 0;
-  width: 140px;
-}
-
-  .button2 {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
-  font-size: 48px;
-  font-family: "Bitter",serif;
-  line-height: 1.8;
-  appearance: none;
-  box-shadow: none;
-  border-radius: 0;
-  width: 295px;
-}
-
-  .toggle {
-
-  }
-
-button:focus {
-  outline: none
-}
-
-section.border button {
- color: #FFFFFF ;
- background: rgba(0,0,0,0);
- border: solid 5px #FFFFFF ;
-}
-section.border button:hover,
-section.border button.hover {
- border-color: #B0B0B0 ;
- color: #B0B0B0 ;
-}
-section.border button:active,
-section.border button.active {
- border-color: #888888 ;
- color: #888888 ;
-}
-
-h1 {
-font-family: "Montserrat", sans-serif;
-font-size: 120px;
-margin: 60px 0px 60px 0px;
-}
-
-.cmn-toggle {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-
-}
-.cmn-toggle + label {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
-  font-size: 48px;
-  font-family: "Montserrat",serif;
-  line-height: 1.8;
-  appearance: none;
-  box-shadow: none;
-  border-radius: 0;
-  width: 140px;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-}
-
-input.cmn-toggle-yes-no + label {
-  padding: 2px;
-  width: 295px;
-  height: 60px;
-}
-input.cmn-toggle-yes-no + label:before,
-input.cmn-toggle-yes-no + label:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: #fff;
-  font-family: "Montserrat", serif;
-  font-size: 20px;
-  text-align: center;
-  line-height: 60px;
-}
-input.cmn-toggle-yes-no + label:before {
-  background-color: #dddddd;
-  content: attr(data-off);
-  transition: transform 0.5s;
-  backface-visibility: hidden;
-}
-input.cmn-toggle-yes-no + label:after {
-  background-color: #8ce196;
-  content: attr(data-on);
-  transition: transform 0.5s;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-}
-input.cmn-toggle-yes-no:checked + label:before {
-  transform: rotateY(180deg);
-}
-input.cmn-toggle-yes-no:checked + label:after {
-  transform: rotateY(0);
-}
-
-</style>
 </head>
 
 <body bgcolor="Grey">
@@ -150,6 +24,9 @@ input.cmn-toggle-yes-no:checked + label:after {
 
 </center>
 </body>
-<script src="src/Thermostat.js"></script>
-<script src="src/app.js"></script>
+<!-- <script src="src/Thermostat.js"></script> -->
+<!-- <script src="src/app.js"></script> -->
+<script src="lib/jasmine-2.3.4/jasmine-jquery.js"></script>
+<script src="src/Thermostat_jquery.js"></script>
+<script src="src/app_jquery.js"></script>
 </html>
