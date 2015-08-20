@@ -39,4 +39,9 @@ $('#reset').click(function() {
   updateTemperature();
 });
 
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=London,uk', function(data) {
+  console.log(data.weather[0].main)
+  $('#showdata').html(data.weather[0].main)
+});
+
 });
