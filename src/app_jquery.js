@@ -39,9 +39,12 @@ $('#reset').click(function() {
   updateTemperature();
 });
 
-$.getJSON('http://api.openweathermap.org/data/2.5/weather?id=2643743', function(data) {
-  $('#showdata').html(data.weather[0].main)
-  $('#cityname').html(data.name)
+$("#weather_button").click(function() {
+  var cityname = $('#city').val();
+  $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + cityname, function(data) {
+    $('#showdata').html(data.weather[0].main)
+    $('#cityname').html(data.name)
+  });
 });
 
 });
